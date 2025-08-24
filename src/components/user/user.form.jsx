@@ -1,9 +1,9 @@
 import { Button, Input, Modal, notification } from "antd";
 import { useState } from "react";
-import axios from "axios";
 import { createUserAPI } from "../../services/api.service";
 
-const UserForm = () => {
+const UserForm = (props) => {
+    const { loadUser } = props;
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -18,13 +18,22 @@ const UserForm = () => {
                 message: "create user",
                 description: "Tạo mới user thành công"
             })
-            setIsModalOpen(false)
+            resetAndCloseModal();
+            await loadUser();
         } else {
             notification.error({
                 message: "Error create user",
                 description: JSON.stringify(res.message)
             })
         }
+    }
+
+    const resetAndCloseModal = () => {
+        setIsModalOpen(false);
+        setFullName("");
+        setEmail("");
+        setPassword("");
+        setPhone("");
     }
 
     return (
