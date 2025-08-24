@@ -1,6 +1,12 @@
+import BookTable from "../components/book/book.table"
+import CreateBookControl from "../components/book/create.book.control"
+
 const BookPage = () => {
     return (
-        <div className="">Book Page</div>
+        <div style={{ padding: "20px" }}>
+            <CreateBookControl />
+            <BookTable />
+        </div>
     )
 }
 
