@@ -1,5 +1,5 @@
-const TodoData = (props) => {
-    console.log(">>> check props: ", props)
+const TodoData = () => {
+
     return (
         <div className='todo-data'>
             <div>Learning React</div>
