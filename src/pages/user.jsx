@@ -23,7 +23,6 @@ const UserPage = () => {
         }
     }
 
-
     // lift-up state
     return (
         <div style={{ padding: "20px" }}>

@@ -67,8 +67,6 @@ const ViewUserDetail = (props) => {
 
     }
 
-    console.log(">>> check file: ", preview)
-
     return (
         <Drawer
             width={"40vw"}
